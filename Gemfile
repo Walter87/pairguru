@@ -13,6 +13,7 @@ gem 'decent_exposure'
 gem 'bootstrap-sass'
 gem 'annotate', '~> 2.6.5'
 gem 'httparty'
+gem 'dotenv-rails'
 
 group :development do
   gem 'rails-erd'
