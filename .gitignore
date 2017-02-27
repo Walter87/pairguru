@@ -19,3 +19,6 @@
 /vendor
 
 coverage
+
+# Ignore .env file
+.env
