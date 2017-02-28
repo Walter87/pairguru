@@ -6,6 +6,8 @@ describe TheMovieDb, type: :service do
 
   subject { TheMovieDb.new movie }
 
+  it { should be_a HTTParty }
+
   its(:options) { should eq(options) }
 
   it do
