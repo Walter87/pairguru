@@ -1,10 +1,9 @@
 class MoviesController < ApplicationController
   before_action :authenticate_user!, only: [:send_info]
-  helper_method :movie_info
-
 
   expose_decorated(:movies) { Movie.all }
   expose(:movie)
+  expose(:movie_info)
 
   def send_info
     MovieInfoMailer.send_info(current_user, movie).deliver_now
@@ -20,10 +19,10 @@ class MoviesController < ApplicationController
   private
 
   def movie_info
-    @movie_info ||= the_movie_db.movie_details
+    @movie_info ||= the_movie_db_api.movie_details
   end
 
-  def the_movie_db
-    @the_movie_db ||= TheMovieDb.new movie
+  def the_movie_db_api
+    @the_movie_db_api ||= TheMovieDb.new movie
   end
 end
