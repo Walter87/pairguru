@@ -12,16 +12,29 @@ describe TheMovieDb, type: :service do
 
   it do
     expect(subject.class.base_uri).to eq "http://api.themoviedb.org/3"
+
     expect(subject.class.default_params).to eq({ api_key: ENV['THE_MOVIEDB_V3'] })
   end
 
   describe '#movie_details' do
+    let(:response) { double }
+
     before { expect(subject).to receive_message_chain(:movie_search, :parsed_response, :[], :first)
-      .with(no_args).with(no_args).with('results').with(no_args) { :response } }
+      .with(no_args).with(no_args).with('results').with(no_args) { response } }
 
-    before { expect(OpenStruct).to receive(:new).with(:response).and_return(:movie_details) }
+    context 'when movie found in api database' do
+      before { allow(response).to receive(:nil?).and_return false }
 
-    its(:movie_details) { should eq :movie_details }
+      before { expect(OpenStruct).to receive(:new).with(response).and_return(:movie_details) }
+
+      its(:movie_details) { should eq :movie_details }
+    end
+
+    context' when movie not found in api database' do
+      before { allow(response).to receive(:nil?).and_return true }
+
+      its(:movie_details) { should be nil }
+    end
   end
 
   # private_methods

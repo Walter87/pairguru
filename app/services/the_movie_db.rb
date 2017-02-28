@@ -12,9 +12,11 @@ class TheMovieDb
   end
 
   def movie_details
-    movie_from_api ||= movie_search.parsed_response['results']
+    movie_from_api ||= movie_search.parsed_response['results'].first
 
-    OpenStruct.new(movie_from_api.first)
+    return nil if movie_from_api.nil?
+
+    OpenStruct.new(movie_from_api)
   end
 
   private
