@@ -38,4 +38,5 @@ group :test do
   gem 'shoulda-matchers'
   gem 'rspec-activemodel-mocks'
   gem 'rspec-its'
+  gem 'database_cleaner'
 end
