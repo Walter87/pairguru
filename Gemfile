@@ -40,4 +40,5 @@ group :test do
   gem 'rspec-activemodel-mocks'
   gem 'rspec-its'
   gem 'database_cleaner'
+  gem 'rspec-sidekiq'
 end
