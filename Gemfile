@@ -15,6 +15,7 @@ gem 'annotate', '~> 2.6.5'
 gem 'httparty'
 gem 'dotenv-rails'
 gem 'sidekiq'
+gem 'swagger-blocks'
 
 group :development do
   gem 'rails-erd'
