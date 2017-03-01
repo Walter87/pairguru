@@ -1,0 +1,14 @@
+:logfile: ./log/sidekiq.log
+:concurrency: 25
+development:
+  :queues:
+    - mailers
+    - exports
+staging:
+  :queues:
+    - mailers
+    - exports
+production:
+  :queues:
+    - mailers
+    - exports
