@@ -14,6 +14,7 @@ gem 'bootstrap-sass'
 gem 'annotate', '~> 2.6.5'
 gem 'httparty'
 gem 'dotenv-rails'
+gem 'sidekiq'
 
 group :development do
   gem 'rails-erd'
