@@ -18,6 +18,8 @@ describe MovieExporter, type: :service do
       expect(csv).to receive(:<<).twice
     end
 
+    before { expect(subject).to receive(:sleep) }
+
     before { expect(MovieExportMailer).to receive_message_chain(:send_file, :deliver_now).with(user, 'Lorem').with(no_args) { :call } }
 
     it do

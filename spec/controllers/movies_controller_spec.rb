@@ -28,6 +28,8 @@ describe MoviesController, type: :controller do
 
     before { expect(Movie).to receive(:find).with(movie.id.to_s) { movie } }
 
+    before { expect_any_instance_of(MovieInfoMailer).to receive(:sleep) }
+
     before { request.env["HTTP_REFERER"] = "where_i_came_from" }
 
     before { get :send_info, { id: movie.id } }
