@@ -152,6 +152,7 @@ GEM
       pry (>= 0.9.10)
     public_suffix (2.0.5)
     rack (1.6.5)
+    rack-cors (0.4.0)
     rack-protection (1.5.3)
       rack
     rack-test (0.6.3)
@@ -295,6 +296,7 @@ DEPENDENCIES
   jquery-rails
   letter_opener
   pry-rails
+  rack-cors
   rails (= 4.2.7.1)
   rails-erd
   rspec-activemodel-mocks

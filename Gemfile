@@ -16,6 +16,7 @@ gem 'httparty'
 gem 'dotenv-rails'
 gem 'sidekiq'
 gem 'swagger-blocks'
+gem 'rack-cors', require: 'rack/cors'
 
 group :development do
   gem 'rails-erd'
