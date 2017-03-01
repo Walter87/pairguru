@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/Walter87/pairguru.svg?branch=master)](https://travis-ci.org/Walter87/pairguru)
+
 ## :hammer: Setup
 
 Before pairing:
