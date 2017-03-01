@@ -1,10 +1,13 @@
 class MovieDecorator < Draper::Decorator
   delegate_all
 
+  decorates_association :genre
+
   def as_json(*args)
     {
       id: id,
-      title: title
+      title: title,
+      genre: genre.as_json
     }
   end
 
