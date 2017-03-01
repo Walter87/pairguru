@@ -4,6 +4,8 @@ require 'spec_helper'
 require 'simplecov'
 
 SimpleCov.start 'rails' do
+  add_filter 'lib/api/v1/apidocs'
+
   add_group 'Decorators', 'app/decorators'
 
   add_group 'Mailers', 'app/mailers'

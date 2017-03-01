@@ -26,6 +26,8 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     scope module: :v1 do
+      resources :apidocs, only: :index
+
       resources :movies, only: [:show, :index]
     end
   end
