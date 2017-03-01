@@ -18,27 +18,29 @@ describe MoviesController, type: :controller do
   end
 
   describe '#send_info' do
-    before { sign_in user }
+    user1 = FactoryGirl.create(:user, email: 'mail@example.com')
 
     let(:delivery) { double }
 
-    before { expect(controller).to receive(:authenticate_user!) }
+    before do
+      sign_in user1
 
-    before { expect(controller).to receive(:current_user) { user } }
+      expect(controller).to receive(:authenticate_user!)
 
-    before { expect(Movie).to receive(:find).with(movie.id.to_s) { movie } }
+      expect(controller).to receive(:movie) { movie }
 
-    before { expect_any_instance_of(MovieInfoMailer).to receive(:sleep) }
+      request.env["HTTP_REFERER"] = "where_i_came_from"
 
-    before { request.env["HTTP_REFERER"] = "where_i_came_from" }
-
-    before { get :send_info, { id: movie.id } }
+      get :send_info, { id: movie.id }
+    end
 
     it { should redirect_to "where_i_came_from" }
   end
 
   describe '#export' do
-    before { expect(MovieExporter).to receive_message_chain(:new, :call).with(no_args).with(nil, 'tmp/movies.csv') }
+    ActiveJob::Base.queue_adapter = :test
+
+    before { expect{ExportMoviesJob.perform_later}.to have_enqueued_job(ExportMoviesJob) }
 
     before { get :export }
 

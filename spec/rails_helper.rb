@@ -72,6 +72,10 @@ RSpec.configure do |config|
   # The different available types are documented in the features, such as in
   # https://relishapp.com/rspec/rspec-rails/docs
   config.infer_spec_type_from_file_location!
+
+  RSpec::Sidekiq.configure do |config|
+    config.warn_when_jobs_not_processed_by_sidekiq = false
+  end
 end
 
 Shoulda::Matchers.configure do |config|
