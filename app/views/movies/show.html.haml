@@ -1,9 +1,10 @@
 %h1= movie.title
 .jumbotron
   = movie.description
+  %h3 TheMovieDB Info:
   - unless movie_info.nil?
     %p= movie_info.overview
-    %p= movie_info.vote_average
+    %p= "Average Rating: #{movie_info.vote_average}"
     %p= image_tag "https://image.tmdb.org/t/p/w500#{movie_info.poster_path}"
   - else
     %p Sorry, No such movie in the API database.
