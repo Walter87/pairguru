@@ -18,7 +18,6 @@ gem 'sidekiq'
 gem 'swagger-blocks'
 gem 'rack-cors', require: 'rack/cors'
 gem 'faker', '~> 1.4.3'
-gem 'coveralls', require: false
 
 group :production do
   gem "pg"
