@@ -1,3 +1,10 @@
 language: ruby
 rvm:
-  - 2.3.1
+- 2.3.1
+deploy:
+  provider: heroku
+  api_key:
+    secure: eMnxdTlcTP5UcgUo0aXNaGmXMJP8a1JSJ4JwdRLwbv9zz9fznxj6Mb4UeoTURgyhw8C8bEpBbuAMqdaD7H/acH+AApyBv5mSFwlI/Cmqnpmzg6WiFbq8efO2rTM8QaSdwgt00VR6mvJdzsdR35MHrnN9WBEdeAKsY7IX/4a7KPtUeMhsgeGaOZD52bqROHHHa31YGTt6Hw9l0rSwztCXWXch8rOjFrxBQ6RfY95LA2a6wJaYY0Tr2CDKc9PaEIjyEUg7sROgrQZ9bgYu+KijWat9xKR7PyUYRfBAnVe65kVwp+4p07gtuQXGkiOSWeLCaQ8I3MRhcox6JCkAQcXg53cdNJN9SqrSbnQF/ZksJewVSQuWfq1bZh+5UKXGBW+LqCVCVsVQVwRu6WFpqGdQK/KA5xXDx/dyVka6J+uRJre4t3BFkrR+ZXj1k8wkNGPh6uGbfxAG4+9fyna339iPUGmIzk1wMZNBjAopsFYO+OYC+YtTaNEBa/Q4qWrqFG+b9JGm6VVha/wB5AUdihnvd0LJ5BlDCsmFIrbEwcWfmT31ieWasGfEN6b9h2LZRG+6bMpHSxYzwxsXs4jMyPbSk2qQtZk65AhtRfTEfkZv8DHQdu8Z2ogtp/Wjx2cZX6eTJTFc9WnmZ3stiH5atC/kp48fnYFmdNaTVWqF7dYbKpQ=
+  app: intense-brook-24091
+  on:
+    repo: Walter87/pairguru
