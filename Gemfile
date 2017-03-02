@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.3.1'
 
 gem 'rails', '4.2.7.1'
 gem 'sass-rails', '~> 4.0.3'
@@ -16,10 +17,11 @@ gem 'dotenv-rails'
 gem 'sidekiq'
 gem 'swagger-blocks'
 gem 'rack-cors', require: 'rack/cors'
+gem 'faker', '~> 1.4.3'
 
 group :production do
   gem "pg"
-  gem 'faker', '~> 1.4.3'
+  gem 'rails_12factor'
 end
 
 group :development do
@@ -37,7 +39,6 @@ group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails'
   gem 'capybara'
-  gem 'faker', '~> 1.4.3'
   gem 'factory_girl_rails', '~> 4.0'
   gem 'simplecov'
 end
