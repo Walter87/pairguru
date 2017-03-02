@@ -19,6 +19,7 @@ gem 'rack-cors', require: 'rack/cors'
 
 group :production do
   gem "pg"
+  gem 'faker', '~> 1.4.3'
 end
 
 group :development do
