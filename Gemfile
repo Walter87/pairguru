@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.2.7.1'
-gem 'sqlite3'
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
@@ -18,6 +17,10 @@ gem 'sidekiq'
 gem 'swagger-blocks'
 gem 'rack-cors', require: 'rack/cors'
 
+group :production do
+  gem "pg"
+end
+
 group :development do
   gem 'rails-erd'
   gem 'better_errors'
@@ -30,6 +33,7 @@ group :development do
 end
 
 group :development, :test do
+  gem 'sqlite3'
   gem 'rspec-rails'
   gem 'capybara'
   gem 'faker', '~> 1.4.3'
